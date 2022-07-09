@@ -7,7 +7,9 @@ from TongXinDaBasicDataStructure import DayData, MinuteData, day_file_handler
 
 class DayDataTest(unittest.TestCase):
     def test_parser(self):
-        with open(os.path.dirname(os.path.realpath (__file__)) + "\\TestData\\sz000001.day", 'rb') as f:
+        with open(os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "TestData", "sz000001.day"), 'rb') as f:
             day_raw_data = DayData(f.read(32))
             day_raw_data.print_log()
 
@@ -21,15 +23,21 @@ class DayDataTest(unittest.TestCase):
         pass
 
     def test_parser_full_file(self):
-        data_file = day_file_handler(os.path.dirname(os.path.realpath (__file__)) + "\\TestData\\sz000001.day")
+        data_file = day_file_handler(
+            os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "TestData", "sz000001.day"))
         print(data_file.get_data_count())
-        self.assertEqual(data_file.stock_code, "sz000001");
-        self.assertEqual(data_file.file_type, "day");
+        self.assertEqual(data_file.stock_code, "sz000001")
+        self.assertEqual(data_file.file_type, "day")
         pass
 
 class LC5_MinuteDataTest(unittest.TestCase):
     def test_parser(self):
-        with open(os.path.dirname(os.path.realpath (__file__)) + "\\TestData\\sz000001.lc5", 'rb') as f:
+
+        with open(os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "TestData", "sz000001.lc5"), 'rb') as f:
             lc5_raw_data = MinuteData(f.read(32))
             lc5_raw_data.print_log()
 
