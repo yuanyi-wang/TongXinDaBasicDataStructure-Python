@@ -2,11 +2,12 @@
 """
 通达信基础数据文件解析器
 """
+
 from math import floor
 import os
 import struct
 
-class DayData(object):
+class DayData:
     """
     通达信日线*.day文件
     文件名即股票代码
@@ -48,7 +49,7 @@ class DayData(object):
         """
         print(self.__dict__)
 
-class MinuteData(object):
+class MinuteData:
     """
     通达信日线*.lc5/lc1文件
     文件名即股票代码
@@ -103,7 +104,7 @@ class MinuteData(object):
         """
         print(self.__dict__)
 
-class DataFile(object):
+class DataFile:
     """
     Data file
     """

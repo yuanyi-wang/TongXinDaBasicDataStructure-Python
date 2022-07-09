@@ -2,6 +2,7 @@
 """
 通达信基础数据文件解析器测试类
 """
+
 import os
 import unittest
 
